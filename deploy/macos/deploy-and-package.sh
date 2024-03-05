@@ -156,7 +156,7 @@ deploy/macos/sign.sh "$volume" || exit 1
 
     rm -f "$dmg"
 
-    hdiutil create -srcfolder "$volume" "$dmg" -volname "$volume" -fs HFS+ && 
+    hdiutil create -srcfolder "$volume" "$dmg" -volname "$volume" && 
 	rm -r "$volume"
 
     echo "Done"

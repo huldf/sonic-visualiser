@@ -23,6 +23,10 @@ fi
 
 "$macdeployqt" "$app.app" 
 
+# If this shows up it has all kinds of dependencies we don't want, so
+# eliminate it
+rm -f "$app.app"/Contents/PlugIns/platforminputcontexts/libqtvirtualkeyboardplugin.dylib
+
 echo "Done"
 
 
