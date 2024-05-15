@@ -5351,7 +5351,7 @@ MainWindow::whatsNew()
     text.replace(QRegularExpression("(.)\n +(.)"), "\\1 \\2");
 
     // Rest of para following a " - " at start becomes bulleted entry
-    text.replace(QRegularExpression("\n - ([^\n]+)"), "\n<li>\\1</li>");
+    text.replace(QRegularExpression("\n+ - ([^\n]+)"), "\n<li>\\1</li>");
 
     // Line-ending ":" introduces the bulleted list
     text.replace(QRegularExpression(": *\n"), ":\n<ul>\n");
