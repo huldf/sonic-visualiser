@@ -9,8 +9,13 @@ if [ -z "$app" ]; then
 	exit 2
 fi
 
+if [ -z "$QTDIR" ]; then
+    echo "Error: QTDIR is not set"
+    exit 2
+fi
+
 if [ ! -d "$QTDIR" ]; then
-    echo "QTDIR must be set"
+    echo "Error: QTDIR ($QTDIR) is not set to a directory that exists"
     exit 2
 fi
 
