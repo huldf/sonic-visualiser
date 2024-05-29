@@ -1,13 +1,18 @@
 
 Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:
 
- - Port to Qt6. The code now builds only with Qt6: Qt5 is no longer
-   supported
+ - Port to Qt6. The code now builds only with Qt6, and Qt5 is no
+   longer supported
 
  - Add mechanism to ignore plugins on subsequent runs if they fail to
    load, and to review ignored plugins from the preferences dialog
 
  - Add Mel scale to the options for vertical spectrogram scale
+
+ - Clarify keyboard and mouse shortcut descriptions in the Key And
+   Mouse Reference window, especially for the platform-specific
+   descriptions used on the Mac, and add a few more alternative
+   shortcuts
 
  - Fix disappearing peaks in peak-bin display mode in the spectrogram,
    caused by overzealous smoothing
