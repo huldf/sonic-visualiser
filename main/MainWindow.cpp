@@ -719,7 +719,7 @@ MainWindow::setupEditMenu()
     m_rightButtonMenu->addAction(action);
 
     m_deleteSelectedAction = new QAction(tr("&Delete Selected Items"), this);
-    m_deleteSelectedAction->setShortcut(tr("Del"));
+    m_deleteSelectedAction->setShortcuts({ tr("Del"), tr("Shift+Backspace") });
     m_deleteSelectedAction->setStatusTip(tr("Delete items in current selection from the current layer"));
     connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
     connect(this, SIGNAL(canDeleteSelection(bool)), m_deleteSelectedAction, SLOT(setEnabled(bool)));
@@ -981,7 +981,7 @@ MainWindow::setupViewMenu()
 
     m_zoomInAction = new QAction(il.load("zoom-in"),
                                  tr("Zoom &In"), this);
-    m_zoomInAction->setShortcut(tr("Up"));
+    m_zoomInAction->setShortcuts({ tr("Up"), QKeySequence::ZoomIn });
     m_zoomInAction->setStatusTip(tr("Increase the zoom level"));
     connect(m_zoomInAction, SIGNAL(triggered()), this, SLOT(zoomIn()));
     connect(this, SIGNAL(canZoom(bool)), m_zoomInAction, SLOT(setEnabled(bool)));
@@ -990,7 +990,7 @@ MainWindow::setupViewMenu()
         
     m_zoomOutAction = new QAction(il.load("zoom-out"),
                                   tr("Zoom &Out"), this);
-    m_zoomOutAction->setShortcut(tr("Down"));
+    m_zoomOutAction->setShortcuts({ tr("Down"), QKeySequence::ZoomOut });
     m_zoomOutAction->setStatusTip(tr("Decrease the zoom level"));
     connect(m_zoomOutAction, SIGNAL(triggered()), this, SLOT(zoomOut()));
     connect(this, SIGNAL(canZoom(bool)), m_zoomOutAction, SLOT(setEnabled(bool)));
@@ -2451,18 +2451,18 @@ MainWindow::setupToolbars()
     
     m_keyReference->setCategory
         (tr("Navigate Tool Mouse Actions"));
-    m_keyReference->registerShortcut
-        (tr("Navigate"), tr("Left"), 
-         tr("Click left button and drag to move around"));
-    m_keyReference->registerShortcut
-        (tr("Zoom to Area"), tr("Shift+Left"), 
-         tr("Shift-click left button and drag to zoom to a rectangular area"));
-    m_keyReference->registerShortcut
-        (tr("Relocate"), tr("Double-Click Left"), 
-         tr("Double-click left button to jump to clicked location"));
-    m_keyReference->registerShortcut
-        (tr("Edit"), tr("Double-Click Left"), 
-         tr("Double-click left button on an item to edit it"));
+    m_keyReference->registerMouseAction
+        (tr("Navigate"), tr("Click+Drag"),
+         tr("Click mouse button and drag to move around"));
+    m_keyReference->registerMouseAction
+        (tr("Zoom to Area"), tr("Shift+Click+Drag"),
+         tr("Shift-click mouse button and drag to zoom to a rectangular area"));
+    m_keyReference->registerMouseAction
+        (tr("Relocate"), tr("DoubleClick"),
+         tr("Double-click mouse button to jump to clicked location"));
+    m_keyReference->registerMouseAction
+        (tr("Edit"), tr("DoubleClick"),
+         tr("Double-click mouse button on an item to edit it"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
     action = toolbar->addAction(il.load("select"), tr("Select"));
@@ -2476,21 +2476,20 @@ MainWindow::setupToolbars()
         
     m_keyReference->setCategory
         (tr("Select Tool Mouse Actions"));
-    m_keyReference->registerShortcut
-        (tr("Select"), tr("Left"), 
-         tr("Click left button and drag to select region; drag region edge to resize"));
+    m_keyReference->registerMouseAction
+        (tr("Select"), tr("Click+Drag"),
+         tr("Click mouse button and drag to select region; drag region edge to resize"));
+    m_keyReference->registerMouseAction
+        (tr("Multi Select"), tr("Ctrl+Click+Drag"),
 #ifdef Q_OS_MAC
-    m_keyReference->registerShortcut
-        (tr("Multi Select"), tr("Ctrl+Left"), 
-         tr("Cmd-click left button and drag to select an additional region"));
+         tr("Cmd-click mouse button and drag to select an additional region")
 #else
-    m_keyReference->registerShortcut
-        (tr("Multi Select"), tr("Ctrl+Left"), 
-         tr("Ctrl-click left button and drag to select an additional region"));
+         tr("Ctrl-click mouse button and drag to select an additional region")
 #endif
-    m_keyReference->registerShortcut
-        (tr("Fine Select"), tr("Shift+Left"), 
-        tr("Shift-click left button and drag to select without snapping to items or grid"));
+            );
+    m_keyReference->registerMouseAction
+        (tr("Fine Select"), tr("Shift+Click+Drag"),
+        tr("Shift-click mouse button and drag to select without snapping to items or grid"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
     action = toolbar->addAction(il.load("move"), tr("Edit"));
@@ -2505,12 +2504,12 @@ MainWindow::setupToolbars()
     
     m_keyReference->setCategory
         (tr("Edit Tool Mouse Actions"));
-    m_keyReference->registerShortcut
-        (tr("Move"), tr("Left"), 
-        tr("Click left button on an item or selected region and drag to move"));
-    m_keyReference->registerShortcut
-        (tr("Edit"), tr("Double-Click Left"), 
-        tr("Double-click left button on an item to edit it"));
+    m_keyReference->registerMouseAction
+        (tr("Move"), tr("Click+Drag"),
+        tr("Click mouse button on an item or selected region and drag to move"));
+    m_keyReference->registerMouseAction
+        (tr("Edit"), tr("DoubleClick+Drag"),
+        tr("Double-click mouse button on an item to edit it"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
     action = toolbar->addAction(il.load("draw"), tr("Draw"));
@@ -2525,9 +2524,9 @@ MainWindow::setupToolbars()
 
     m_keyReference->setCategory
         (tr("Draw Tool Mouse Actions"));
-    m_keyReference->registerShortcut
-        (tr("Draw"), tr("Left"), 
-        tr("Click left button and drag to create new item"));
+    m_keyReference->registerMouseAction
+        (tr("Draw"), tr("Click+Drag"),
+        tr("Click mouse button and drag to create new item"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
     action = toolbar->addAction(il.load("erase"), tr("Erase"));
@@ -2542,9 +2541,9 @@ MainWindow::setupToolbars()
 
     m_keyReference->setCategory
         (tr("Erase Tool Mouse Actions"));
-    m_keyReference->registerShortcut
-        (tr("Erase"), tr("Left"), 
-        tr("Click left button on an item to remove it from the layer"));
+    m_keyReference->registerMouseAction
+        (tr("Erase"), tr("Click"),
+        tr("Click mouse button on an item to remove it from the layer"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
     action = toolbar->addAction(il.load("measure"), tr("Measure"));
@@ -2559,15 +2558,15 @@ MainWindow::setupToolbars()
 
     m_keyReference->setCategory
         (tr("Measure Tool Mouse Actions"));
-    m_keyReference->registerShortcut
-        (tr("Measure Area"), tr("Left"), 
-        tr("Click left button and drag to measure a rectangular area"));
-    m_keyReference->registerShortcut
-        (tr("Measure Item"), tr("Double-Click Left"), 
-        tr("Click left button and drag to measure extents of an item or shape"));
-    m_keyReference->registerShortcut
-        (tr("Zoom to Area"), tr("Shift+Left"), 
-        tr("Shift-click left button and drag to zoom to a rectangular area"));
+    m_keyReference->registerMouseAction
+        (tr("Measure Area"), tr("Click+Drag"),
+        tr("Click mouse button and drag to measure a rectangular area"));
+    m_keyReference->registerMouseAction
+        (tr("Measure Item"), tr("DoubleClick+Drag"),
+        tr("Click mouse button and drag to measure extents of an item or shape"));
+    m_keyReference->registerMouseAction
+        (tr("Zoom to Area"), tr("Shift+Click+Drag"),
+        tr("Shift-click mouse button and drag to zoom to a rectangular area"));
 
     toolNavigateSelected();
 
@@ -4295,11 +4294,12 @@ MainWindow::addLayer()
 
         if (isNewEmptyLayer) {
 
-            double min, max;
-            bool log;
-            QString unit;
-            if (pane->getVisibleExtentsForAnyUnit(min, max, log, unit)) {
-                newLayer->adoptExtents(min, max, unit);
+            CoordinateScale scale = pane->getEffectiveVerticalExtents();
+            if (scale.getUnit() != "") {
+                // This is particularly relevant to new BoxLayers
+                newLayer->adoptExtents(scale.getDisplayMinimum(),
+                                       scale.getDisplayMaximum(),
+                                       scale.getUnit());
             }
             
             for (auto &a : m_toolActions) {
@@ -5350,7 +5350,7 @@ MainWindow::whatsNew()
     text.replace(QRegularExpression("(.)\n +(.)"), "\\1 \\2");
 
     // Rest of para following a " - " at start becomes bulleted entry
-    text.replace(QRegularExpression("\n - ([^\n]+)"), "\n<li>\\1</li>");
+    text.replace(QRegularExpression("\n+ - ([^\n]+)"), "\n<li>\\1</li>");
 
     // Line-ending ":" introduces the bulleted list
     text.replace(QRegularExpression(": *\n"), ":\n<ul>\n");

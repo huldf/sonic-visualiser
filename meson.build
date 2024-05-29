@@ -2,7 +2,7 @@
 project(
   'Sonic Visualiser',
   'c', 'cpp',
-  version: '5.0',
+  version: '5.0.0-pre1',
   license: 'GPL-2.0-or-later',
   default_options: [
     'cpp_std=c++17',
@@ -877,6 +877,7 @@ svgui_files = [
   'svgui/layer/ColourDatabase.cpp',
   'svgui/layer/ColourMapper.cpp',
   'svgui/layer/ColourScale.cpp',
+  'svgui/layer/CoordinateScale.cpp',
   'svgui/layer/FlexiNoteLayer.cpp',
   'svgui/layer/HorizontalFrequencyScale.cpp',
   'svgui/layer/ImageLayer.cpp',
