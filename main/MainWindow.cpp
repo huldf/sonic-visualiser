@@ -2452,16 +2452,16 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Navigate Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Navigate"), tr("Click"),
+        (tr("Navigate"), tr("Click+Drag"),
          tr("Click mouse button and drag to move around"));
     m_keyReference->registerShortcut
-        (tr("Zoom to Area"), tr("Shift+Click"),
+        (tr("Zoom to Area"), tr("Shift+Click+Drag"),
          tr("Shift-click mouse button and drag to zoom to a rectangular area"));
     m_keyReference->registerShortcut
-        (tr("Relocate"), tr("Double-Click"),
+        (tr("Relocate"), tr("DoubleClick"),
          tr("Double-click mouse button to jump to clicked location"));
     m_keyReference->registerShortcut
-        (tr("Edit"), tr("Double-Click"),
+        (tr("Edit"), tr("DoubleClick"),
          tr("Double-click mouse button on an item to edit it"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
@@ -2477,19 +2477,19 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Select Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Select"), tr("Click"),
+        (tr("Select"), tr("Click+Drag"),
          tr("Click mouse button and drag to select region; drag region edge to resize"));
 #ifdef Q_OS_MAC
     m_keyReference->registerShortcut
-        (tr("Multi Select"), tr("Ctrl+Click"),
+        (tr("Multi Select"), tr("Ctrl+Click+Drag"),
          tr("Cmd-click mouse button and drag to select an additional region"));
 #else
     m_keyReference->registerShortcut
-        (tr("Multi Select"), tr("Ctrl+Click"),
+        (tr("Multi Select"), tr("Ctrl+Click+Drag"),
          tr("Ctrl-click mouse button and drag to select an additional region"));
 #endif
     m_keyReference->registerShortcut
-        (tr("Fine Select"), tr("Shift+Click"),
+        (tr("Fine Select"), tr("Shift+Click+Drag"),
         tr("Shift-click mouse button and drag to select without snapping to items or grid"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
@@ -2506,10 +2506,10 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Edit Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Move"), tr("Click"),
+        (tr("Move"), tr("Click+Drag"),
         tr("Click mouse button on an item or selected region and drag to move"));
     m_keyReference->registerShortcut
-        (tr("Edit"), tr("Double-Click"),
+        (tr("Edit"), tr("DoubleClick+Drag"),
         tr("Double-click mouse button on an item to edit it"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
@@ -2526,7 +2526,7 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Draw Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Draw"), tr("Click"),
+        (tr("Draw"), tr("Click+Drag"),
         tr("Click mouse button and drag to create new item"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
@@ -2560,13 +2560,13 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Measure Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Measure Area"), tr("Click"),
+        (tr("Measure Area"), tr("Click+Drag"),
         tr("Click mouse button and drag to measure a rectangular area"));
     m_keyReference->registerShortcut
-        (tr("Measure Item"), tr("Double-Click"),
+        (tr("Measure Item"), tr("DoubleClick+Drag"),
         tr("Click mouse button and drag to measure extents of an item or shape"));
     m_keyReference->registerShortcut
-        (tr("Zoom to Area"), tr("Shift+Click"),
+        (tr("Zoom to Area"), tr("Shift+Click+Drag"),
         tr("Shift-click mouse button and drag to zoom to a rectangular area"));
 
     toolNavigateSelected();
