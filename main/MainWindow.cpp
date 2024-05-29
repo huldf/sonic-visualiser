@@ -719,7 +719,7 @@ MainWindow::setupEditMenu()
     m_rightButtonMenu->addAction(action);
 
     m_deleteSelectedAction = new QAction(tr("&Delete Selected Items"), this);
-    m_deleteSelectedAction->setShortcut(tr("Del"));
+    m_deleteSelectedAction->setShortcuts({ tr("Del"), tr("Shift+Backspace") });
     m_deleteSelectedAction->setStatusTip(tr("Delete items in current selection from the current layer"));
     connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
     connect(this, SIGNAL(canDeleteSelection(bool)), m_deleteSelectedAction, SLOT(setEnabled(bool)));
@@ -981,7 +981,7 @@ MainWindow::setupViewMenu()
 
     m_zoomInAction = new QAction(il.load("zoom-in"),
                                  tr("Zoom &In"), this);
-    m_zoomInAction->setShortcut(tr("Up"));
+    m_zoomInAction->setShortcuts({ tr("Up"), QKeySequence::ZoomIn });
     m_zoomInAction->setStatusTip(tr("Increase the zoom level"));
     connect(m_zoomInAction, SIGNAL(triggered()), this, SLOT(zoomIn()));
     connect(this, SIGNAL(canZoom(bool)), m_zoomInAction, SLOT(setEnabled(bool)));
@@ -990,7 +990,7 @@ MainWindow::setupViewMenu()
         
     m_zoomOutAction = new QAction(il.load("zoom-out"),
                                   tr("Zoom &Out"), this);
-    m_zoomOutAction->setShortcut(tr("Down"));
+    m_zoomOutAction->setShortcuts({ tr("Down"), QKeySequence::ZoomOut });
     m_zoomOutAction->setStatusTip(tr("Decrease the zoom level"));
     connect(m_zoomOutAction, SIGNAL(triggered()), this, SLOT(zoomOut()));
     connect(this, SIGNAL(canZoom(bool)), m_zoomOutAction, SLOT(setEnabled(bool)));
