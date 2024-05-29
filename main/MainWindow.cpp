@@ -2452,16 +2452,16 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Navigate Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Navigate"), tr("Left"), 
+        (tr("Navigate"), tr("Click"),
          tr("Click left button and drag to move around"));
     m_keyReference->registerShortcut
-        (tr("Zoom to Area"), tr("Shift+Left"), 
+        (tr("Zoom to Area"), tr("Shift+Click"),
          tr("Shift-click left button and drag to zoom to a rectangular area"));
     m_keyReference->registerShortcut
-        (tr("Relocate"), tr("Double-Click Left"), 
+        (tr("Relocate"), tr("Double-Click"),
          tr("Double-click left button to jump to clicked location"));
     m_keyReference->registerShortcut
-        (tr("Edit"), tr("Double-Click Left"), 
+        (tr("Edit"), tr("Double-Click"),
          tr("Double-click left button on an item to edit it"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
@@ -2477,19 +2477,19 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Select Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Select"), tr("Left"), 
+        (tr("Select"), tr("Click"),
          tr("Click left button and drag to select region; drag region edge to resize"));
 #ifdef Q_OS_MAC
     m_keyReference->registerShortcut
-        (tr("Multi Select"), tr("Ctrl+Left"), 
+        (tr("Multi Select"), tr("Ctrl+Click"),
          tr("Cmd-click left button and drag to select an additional region"));
 #else
     m_keyReference->registerShortcut
-        (tr("Multi Select"), tr("Ctrl+Left"), 
+        (tr("Multi Select"), tr("Ctrl+Click"),
          tr("Ctrl-click left button and drag to select an additional region"));
 #endif
     m_keyReference->registerShortcut
-        (tr("Fine Select"), tr("Shift+Left"), 
+        (tr("Fine Select"), tr("Shift+Click"),
         tr("Shift-click left button and drag to select without snapping to items or grid"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
@@ -2506,10 +2506,10 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Edit Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Move"), tr("Left"), 
+        (tr("Move"), tr("Click"),
         tr("Click left button on an item or selected region and drag to move"));
     m_keyReference->registerShortcut
-        (tr("Edit"), tr("Double-Click Left"), 
+        (tr("Edit"), tr("Double-Click"),
         tr("Double-click left button on an item to edit it"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
@@ -2526,7 +2526,7 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Draw Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Draw"), tr("Left"), 
+        (tr("Draw"), tr("Click"),
         tr("Click left button and drag to create new item"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
@@ -2543,7 +2543,7 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Erase Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Erase"), tr("Left"), 
+        (tr("Erase"), tr("Click"),
         tr("Click left button on an item to remove it from the layer"));
 
     m_keyReference->setCategory(tr("Tool Selection"));
@@ -2560,13 +2560,13 @@ MainWindow::setupToolbars()
     m_keyReference->setCategory
         (tr("Measure Tool Mouse Actions"));
     m_keyReference->registerShortcut
-        (tr("Measure Area"), tr("Left"), 
+        (tr("Measure Area"), tr("Click"),
         tr("Click left button and drag to measure a rectangular area"));
     m_keyReference->registerShortcut
-        (tr("Measure Item"), tr("Double-Click Left"), 
+        (tr("Measure Item"), tr("Double-Click"),
         tr("Click left button and drag to measure extents of an item or shape"));
     m_keyReference->registerShortcut
-        (tr("Zoom to Area"), tr("Shift+Left"), 
+        (tr("Zoom to Area"), tr("Shift+Click"),
         tr("Shift-click left button and drag to zoom to a rectangular area"));
 
     toolNavigateSelected();
