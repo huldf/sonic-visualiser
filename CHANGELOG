@@ -25,6 +25,8 @@ Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:
 
  - Fix disappearance of right-button Transforms menu after file load
 
+ - Fix inconsistent default vs set threshold values in spectrogram
+
  - Fix crash on painting very low-resolution dense 3d plots
 
 
