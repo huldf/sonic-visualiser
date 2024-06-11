@@ -9,6 +9,10 @@ Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:
 
  - Add Mel scale to the options for vertical spectrogram scale
 
+ - Add an opaque toggle to the spectrogram; switching it off gives
+   spectrograms some transparency, so they can be overlaid over other
+   layers, including other spectrograms
+
  - Clarify keyboard and mouse shortcut descriptions in the Key And
    Mouse Reference window, especially for the platform-specific
    descriptions used on the Mac, and add a few more alternative
