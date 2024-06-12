@@ -13,6 +13,16 @@ Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:
    spectrograms some transparency, so they can be overlaid over other
    layers, including other spectrograms
 
+ - Update opaque setting in colour 3d layers so that it works like the
+   new one in the spectrogram. Previously colour 3d plot layers could
+   be translucent at low resolutions but not at higher ones; now the
+   setting affects all resolutions. Correspondingly make the setting
+   default to off, as in the spectrogram
+
+ - Add smoothing toggle directly to spectrogram parameters, like the
+   one already found in colour 3d plot layers (previously spectrogram
+   smoothing could be toggled only from the preferences)
+
  - Clarify keyboard and mouse shortcut descriptions in the Key And
    Mouse Reference window, especially for the platform-specific
    descriptions used on the Mac, and add a few more alternative
@@ -20,10 +30,6 @@ Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:
 
  - Fix disappearing peaks in peak-bin display mode in the spectrogram,
    caused by overzealous smoothing
-
- - Add smoothing toggle directly to spectrogram parameters, like the
-   one already found in colour 3d plot layers (previously spectrogram
-   smoothing could be toggled only from the preferences)
 
  - Fix some very slow spectrogram painting
 
