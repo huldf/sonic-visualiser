@@ -10,6 +10,7 @@ needs_exe_wrapper = false
 [binaries]
 c = 'cc'
 cpp = 'c++'
+objcpp = 'c++'
 strip = 'strip'
 pkg-config = 'pkg-config'
 qmake = 'qmake'
@@ -18,4 +19,5 @@ qmake = 'qmake'
 c_args = ['-arch', 'x86_64']
 cpp_args = ['-arch', 'x86_64']
 cpp_link_args = ['-arch', 'x86_64']
+objcpp_args = ['-arch', 'x86_64']
 
