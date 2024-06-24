@@ -8,18 +8,27 @@ echo on
 
 set STARTPWD=%CD%
 
-set QTDIR=C:\Qt\5.11.2\msvc2017_64
+rem The first path is for workstation builds, the others for CI
+set QTDIR=C:\Qt\6.6.1\msvc2019_64
 if not exist %QTDIR% (
-@   echo Could not find 64-bit Qt
+    set QTDIR=%QT_ROOT_DIR%
+)
+if not exist %QTDIR% (
+@   echo Could not find Qt in %QTDIR%
 @   exit /b 2
 )
 
-if not exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" (
-@   echo "Could not find MSVC vars batch file"
+rem Similarly, the first path is for workstation builds, the second for CI
+set vcvarsall="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+if not exist %vcvarsall% (
+    set vcvarsall="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat"
+)
+if not exist %vcvarsall% (
+@   echo Could not find MSVC vars batch file in %vcvarsall%
 @   exit /b 2
 )
 
-call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" amd64
+call %vcvarsall% amd64
 
 set ORIGINALPATH=%PATH%
 set PATH=%PATH%;C:\Program Files (x86)\SMLNJ\bin;%QTDIR%\bin
@@ -29,41 +38,38 @@ cd %STARTPWD%
 call .\repoint install
 if %errorlevel% neq 0 exit /b %errorlevel%
 
-sv-dependency-builds\win64-msvc\bin\capnp -Isv-dependency-builds/win64-msvc/include compile --src-prefix=piper/capnp -osv-dependency-builds/win64-msvc/bin/capnpc-c++:piper-vamp-cpp/vamp-capnp piper/capnp/piper.capnp
+set BUILDDIR=build_win64_debug
+
+if not exist %BUILDDIR%\build.ninja (
+  meson setup %BUILDDIR% --buildtype debug 
+  if %errorlevel% neq 0 exit /b %errorlevel%
+)
+
+ninja -C %BUILDDIR%
 if %errorlevel% neq 0 exit /b %errorlevel%
 
-mkdir build_win64_debug
-cd build_win64_debug
+copy %QTDIR%\bin\Qt6Cored.dll .\%BUILDDIR%
+copy %QTDIR%\bin\Qt6Guid.dll .\%BUILDDIR%
+copy %QTDIR%\bin\Qt6Widgetsd.dll .\%BUILDDIR%
+copy %QTDIR%\bin\Qt6Networkd.dll .\%BUILDDIR%
+copy %QTDIR%\bin\Qt6Xmld.dll .\%BUILDDIR%
+copy %QTDIR%\bin\Qt6Svgd.dll .\%BUILDDIR%
+copy %QTDIR%\bin\Qt6Testd.dll .\%BUILDDIR%
 
-qmake -spec win32-msvc -r -tp vc ..\sonic-visualiser.pro
-if %errorlevel% neq 0 exit /b %errorlevel%
+mkdir .\%BUILDDIR%\plugins
+mkdir .\%BUILDDIR%\plugins\platforms
+mkdir .\%BUILDDIR%\plugins\styles
 
-msbuild sonic-visualiser.sln /t:Build /p:Configuration=Debug
-if %errorlevel% neq 0 exit /b %errorlevel%
+copy %QTDIR%\plugins\platforms\qdirect2dd.dll .\%BUILDDIR%\plugins\platforms
+copy %QTDIR%\plugins\platforms\qminimald.dll .\%BUILDDIR%\plugins\platforms
+copy %QTDIR%\plugins\platforms\qoffscreend.dll .\%BUILDDIR%\plugins\platforms
+copy %QTDIR%\plugins\platforms\qwindowsd.dll .\%BUILDDIR%\plugins\platforms
+copy %QTDIR%\plugins\styles\qwindowsvistastyled.dll .\%BUILDDIR%\plugins\styles
 
-copy .\checker\debug\vamp-plugin-load-checker.exe .\debug
+copy sv-dependency-builds\win64-msvc\lib\libsndfile-1.dll .\%BUILDDIR%
 
-copy %QTDIR%\bin\Qt5Cored.dll .\debug
-copy %QTDIR%\bin\Qt5Guid.dll .\debug
-copy %QTDIR%\bin\Qt5Widgetsd.dll .\debug
-copy %QTDIR%\bin\Qt5Networkd.dll .\debug
-copy %QTDIR%\bin\Qt5Xmld.dll .\debug
-copy %QTDIR%\bin\Qt5Svgd.dll .\debug
-copy %QTDIR%\bin\Qt5Testd.dll .\debug
-copy %QTDIR%\plugins\platforms\qminimald.dll .\debug
-copy %QTDIR%\plugins\platforms\qwindowsd.dll .\debug
-copy %QTDIR%\plugins\styles\qwindowsvistastyled.dll .\debug
-copy ..\sv-dependency-builds\win64-msvc\lib\libsndfile-1.dll .\debug
-
-rem some of these expect to be run from the project root
-cd ..
-build_win64_debug\debug\test-svcore-base
-if %errorlevel% neq 0 exit /b %errorlevel%
-build_win64_debug\debug\test-svcore-system
-if %errorlevel% neq 0 exit /b %errorlevel%
-build_win64_debug\debug\test-svcore-data-fileio
-if %errorlevel% neq 0 exit /b %errorlevel%
-build_win64_debug\debug\test-svcore-data-model
+meson test -C %BUILDDIR%
 if %errorlevel% neq 0 exit /b %errorlevel%
 
 set PATH=%ORIGINALPATH%
+
