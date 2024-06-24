@@ -23,6 +23,12 @@ Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:
    one already found in colour 3d plot layers (previously spectrogram
    smoothing could be toggled only from the preferences)
 
+ - Stop snapping spectrogram frequency range to bin frequencies. This
+   feature was more confusing than useful in practice, and became a
+   real problem with the new support for translucent spectrograms,
+   which enabled overlaying spectrograms of differing bin counts that
+   were therefore too hard to line up properly
+
  - Clarify keyboard and mouse shortcut descriptions in the Key And
    Mouse Reference window, especially for the platform-specific
    descriptions used on the Mac, and add a few more alternative
