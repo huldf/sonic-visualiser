@@ -1675,6 +1675,12 @@ MainWindow::prepareTransformsMenu()
     m_transformsMenu->setTearOffEnabled(true);
     m_transformsMenu->setSeparatorsCollapsible(true);
 
+    // Add this category now, even though there is nothing in it until
+    // the scan completes, because we want the category to be filed at
+    // this point in the list rather than right at the end as it will
+    // be otherwise
+    m_keyReference->setCategory(tr("Running Transforms"));
+
     auto pending = m_transformsMenu->addAction(tr("Scanning plugins..."));
     pending->setEnabled(false);
     
@@ -1971,6 +1977,8 @@ MainWindow::populateTransformsMenu()
     m_transformsMenu->addSeparator();
     m_rightButtonTransformsMenu->addSeparator();
 
+    m_keyReference->setCategory(tr("Running Transforms"));
+
     QAction *action = new QAction(tr("Find a Transform..."), this);
     action->setStatusTip(tr("Search for a transform from the installed plugins, by name or description"));
     action->setShortcut(tr("Ctrl+M"));
@@ -2109,6 +2117,8 @@ void
 MainWindow::setupRecentTransformsMenu()
 {
     SVDEBUG << "MainWindow::setupRecentTransformsMenu" << endl;
+    
+    m_keyReference->setCategory(tr("Running Transforms"));
     
     m_recentTransformsMenu->clear();
     vector<QString> transforms = m_recentTransforms.getRecent();
