@@ -37,6 +37,10 @@ Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:
  - Fix disappearing peaks in peak-bin display mode in the spectrogram,
    caused by overzealous smoothing
 
+ - Fix jumps in spectrogram when changing zoom level between certain
+   values in hi-dpi pixel-doubled situations, caused by a failure of
+   cache invalidation
+
  - Fix some very slow spectrogram painting
 
  - Fix disappearance of right-button Transforms menu after file load
