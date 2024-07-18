@@ -76,8 +76,8 @@ add_dependencies "build/$checker"
 add_dependencies "build/$piper"
 add_dependencies "build/$convert"
 
-qtplugins="gif icns ico jpeg tga tiff wbmp webp cocoa minimal offscreen xcb"
-qtlibdirs="/usr/lib/x86_64-linux-gnu/qt5 /usr/lib/x86_64-linux-gnu/qt /usr/lib/qt5 /usr/lib/qt"
+qtplugins="gif icns ico jpeg tga tiff wbmp webp cocoa minimal offscreen wayland xcb"
+qtlibdirs="/usr/lib/x86_64-linux-gnu/qt6 /usr/lib/x86_64-linux-gnu/qt /usr/lib/qt6 /usr/lib/qt"
 
 QTDIR=${QTDIR:-}
 if [ -n "$QTDIR" ]; then
@@ -93,7 +93,7 @@ for plug in $qtplugins; do
                 if [ t"$subdir" = t"plugins" ]; then
                     subdir=""
                 fi
-                target="$targetdir/usr/lib/qt5/plugins/$subdir/$(basename $lib)"
+                target="$targetdir/usr/lib/qt6/plugins/$subdir/$(basename $lib)"
                 mkdir -p "$(dirname $target)"
                 cp -v "$lib" "$target"
                 chmod +x "$target"
