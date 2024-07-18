@@ -14,15 +14,14 @@ jobs:
     - name: repoint
       run: PATH=$PATH:/usr/local/smlnj/bin ./repoint install
     - name: configure
-      run: PATH=$PATH:/usr/local/opt/qt6/bin meson setup build --buildtype release
+      run: meson setup build --buildtype release
     - name: make
       run: ninja -C build
     - name: test
       run: meson test -C build
     - name: deploy-app
       run: |
-        ls -lR /usr/local/opt
-        QTDIR=/usr/local/opt/qt6 ./deploy/macos/deploy.sh "Sonic Visualiser"
+        QTDIR=/opt/homebrew ./deploy/macos/deploy.sh "Sonic Visualiser"
     - name: check
       run: |
         otool -L ./"Sonic Visualiser.app/Contents/MacOS/Sonic Visualiser"
