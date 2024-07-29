@@ -1,3 +1,4 @@
+# Note 22.04 was the first LTS with Qt6
 FROM ubuntu:22.04
 MAINTAINER Chris Cannam <cannam@all-day-breakfast.com>
 RUN apt-get update && \
@@ -40,7 +41,6 @@ RUN apt-get update && \
     libcapnp-dev \
     ninja-build \
     libglib2.0-dev \
-    librubberband-dev \
     python3-pip
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -49,6 +49,12 @@ RUN git config --global http.postBuffer 4M
 
 WORKDIR /root
 RUN pip3 install meson
+
+RUN wget https://breakfastquay.com/files/releases/rubberband-3.3.0.tar.bz2
+RUN tar xvjf rubberband-3.3.0.tar.bz2
+WORKDIR rubberband-3.3.0
+RUN meson setup build -Ddefault_library=static && ninja -C build && ninja -C build install
+WORKDIR /root
 
 COPY id_rsa_build .ssh/id_rsa_build
 COPY known_hosts .ssh/known_hosts
@@ -65,7 +71,7 @@ WORKDIR sonic-visualiser
 RUN git checkout [[REVISION]]
 
 RUN ./repoint install
-RUN meson build --buildtype release
+RUN meson setup build --buildtype release
 RUN ninja -C build
 
 RUN deploy/linux/deploy-deb.sh [[RELEASE]] amd64
