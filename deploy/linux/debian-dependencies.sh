@@ -37,5 +37,5 @@ echo "Packages that can be eliminated because other packages depend on them (exc
 cat $rfile 1>&2
 echo 1>&2
 
-cat $pfile $rfile | sort | uniq -u | sed 's/$/,/' | fmt -1000 | sed 's/^/Depends: /' | sed 's/,$/, libc6/' | sed 's/ libjack0,//'
+cat $pfile $rfile | sort | uniq -u | sed 's/$/,/' | fmt -1000 | sed 's/^/Depends: /' | sed 's/,$/, libc6/' | sed 's/ libjack0,//' | sed 's/ libcapnp-[^,]*,/ capnproto,/'
 
