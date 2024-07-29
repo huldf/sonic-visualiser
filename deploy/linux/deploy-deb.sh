@@ -64,5 +64,8 @@ perl -i -p -e "s/Version: .*/Version: $control_ver/" "$targetdir"/DEBIAN/control
 
 bash "$depdir"/fix-lintian-bits.sh "$targetdir"
 
+echo "Control file now reads as follows:"
+cat "$targetdir/DEBIAN/control"
+
 dpkg-deb --build "$targetdir" && lintian "$targetdir".deb
 
