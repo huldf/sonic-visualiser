@@ -31,7 +31,7 @@ for p in `cat $pfile`; do
 		echo $p
 	    fi
     done
-done | sort | uniq | grep -v qt6 > $rfile
+done | sort | uniq | grep -vi qt6 > $rfile
 
 echo "Packages that can be eliminated because other packages depend on them (excluding qt6 packages):" 1>&2
 cat $rfile 1>&2
