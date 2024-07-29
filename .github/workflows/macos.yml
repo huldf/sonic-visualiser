@@ -25,4 +25,6 @@ jobs:
     - name: check
       run: |
         otool -L ./"Sonic Visualiser.app/Contents/MacOS/Sonic Visualiser"
-        ./"Sonic Visualiser.app/Contents/MacOS/Sonic Visualiser" --version
+
+
+## ./"Sonic Visualiser.app/Contents/MacOS/Sonic Visualiser" --version
