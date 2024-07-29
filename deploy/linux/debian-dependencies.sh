@@ -15,7 +15,7 @@ echo 1>&2
 
 ldd "$target" | awk '{ print $3; }' | grep '^/' | while read lib; do
     if test -n "$lib" ; then
-	dpkg-query -S "$lib"
+	dpkg-query -S "$(realpath lib)"
     fi
     done | grep ': ' | awk -F: '{ print $1 }' | sort | uniq > $pfile
 
