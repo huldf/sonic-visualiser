@@ -65,8 +65,9 @@ The bulk of the Sonic Visualiser code is
 
 with a few exceptions as indicated in the individual source files.
 
-Russian translation provided by Alexandre Prokoudine, copyright
-2006-2019 Alexandre Prokoudine.
+Russian translation initially provided by Alexandre Prokoudine,
+updated by Sergey Kazorin, copyright 2006-2019 Alexandre Prokoudine
+and 2024 Sergey Kazorin.
 
 Czech translation provided by Pavel Fric, copyright 2010-2019 Pavel
 Fric.

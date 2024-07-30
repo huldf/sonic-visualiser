@@ -5312,7 +5312,7 @@ What do you want to export?</source>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="5525"/>
-        <source>Russian UI translation contributed by Alexandre Prokoudine.</source>
+        <source>Russian UI translation contributed by Alexandre Prokoudine and updated by Sergey Kazorin.</source>
         <translation>Перевод интерфейса на русский язык выполнили Александр Прокудин, Сергей Казорин.</translation>
     </message>
     <message>

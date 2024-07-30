@@ -5521,7 +5521,7 @@ MainWindow::about()
 #endif // HAVE_LIBLO
 
     aboutText += "<p><small>";
-    aboutText += tr("Russian UI translation contributed by Alexandre Prokoudine.");
+    aboutText += tr("Russian UI translation contributed by Alexandre Prokoudine and updated by Sergey Kazorin.");
     aboutText += "<br>";
     aboutText += tr("Czech UI translation contributed by Pavel Fric.");
     aboutText += "</small></p>";
