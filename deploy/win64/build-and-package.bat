@@ -7,7 +7,7 @@ if not exist "C:\Program Files (x86)\SMLNJ\bin" (
 @   exit /b 2
 )
 
-if not exist "C:\Program Files (x86)\WiX Toolset v3.11\bin" (
+if not exist "C:\Program Files (x86)\WiX Toolset v3.14\bin" (
 @   echo Could not find WiX Toolset
 @   exit /b 2
 )
@@ -48,7 +48,7 @@ signtool sign /v /n "%NAME%" /t http://time.certum.pl /fd sha1 /a build_win64\*.
 powershell -NoProfile -ExecutionPolicy Bypass -Command "& 'deploy\win64\generate-wxs.ps1'"
 if errorlevel 1 exit /b %errorlevel%
 
-set PATH=%PATH%;"C:\Program Files (x86)\WiX Toolset v3.11\bin"
+set PATH=%PATH%;"C:\Program Files (x86)\WiX Toolset v3.14\bin"
 
 mkdir packages
 

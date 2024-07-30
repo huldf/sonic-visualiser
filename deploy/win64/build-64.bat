@@ -5,8 +5,11 @@ echo on
 
 set STARTPWD=%CD%
 
-rem The first path is for workstation builds, the others for CI
-set QTDIR=C:\Qt\6.6.1\msvc2019_64
+rem The first paths are for workstation builds, the last for CI
+set QTDIR=C:\QtOpenSource\6.7.2\msvc2019_64
+if not exist %QTDIR% (
+    set QTDIR=C:\Qt\6.6.1\msvc2019_64
+)
 if not exist %QTDIR% (
     set QTDIR=%QT_ROOT_DIR%
 )
@@ -61,7 +64,7 @@ copy %QTDIR%\plugins\platforms\qdirect2d.dll .\%BUILDDIR%\plugins\platforms
 copy %QTDIR%\plugins\platforms\qminimal.dll .\%BUILDDIR%\plugins\platforms
 copy %QTDIR%\plugins\platforms\qoffscreen.dll .\%BUILDDIR%\plugins\platforms
 copy %QTDIR%\plugins\platforms\qwindows.dll .\%BUILDDIR%\plugins\platforms
-copy %QTDIR%\plugins\styles\qwindowsvistastyle.dll .\%BUILDDIR%\plugins\styles
+copy %QTDIR%\plugins\styles\qmodernwindowsstyle.dll .\%BUILDDIR%\plugins\styles
 
 copy sv-dependency-builds\win64-msvc\lib\libsndfile-1.dll .\%BUILDDIR%
 

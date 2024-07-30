@@ -1,0 +1,5 @@
+option('no_qt',
+       type: 'boolean',
+       value: 'false',
+       description: 'Build only the small utilities that do not use Qt.')
+

@@ -64,3 +64,4 @@ Dockerfile*.gen
 squashfs-root
 .notarization-uuid
 .notarization-status
+sonic-visualiser.wxs

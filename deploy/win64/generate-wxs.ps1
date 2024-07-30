@@ -4,7 +4,7 @@ $ErrorActionPreference = "Stop"
 
 $redist_parent_dir = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\"
 
-$redists = (Get-ChildItem -Path $redist_parent_dir -Name -Include 14.* -Attributes Directory)
+$redists = @(Get-ChildItem -Path $redist_parent_dir -Name -Include 14.* -Attributes Directory)
 
 if (!$redists) {
     echo "ERROR: No 14.x redistributable directories found under $redist_parent_dir"

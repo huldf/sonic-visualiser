@@ -120,33 +120,33 @@
           </Component>
           
           <Component Win64="yes"
-              Id="Qt5"
+              Id="Qt6"
               Guid="5495ED5E-939A-4BE8-9000-D55F2A7A2E90">
             <File
                 Id="QtCore"
-                Name="Qt5Core.dll"
-                Source="build_win64\Qt5Core.dll"
+                Name="Qt6Core.dll"
+                Source="build_win64\Qt6Core.dll"
 		KeyPath="yes"/>
             <File
                 Id="QtGui"
-                Name="Qt5Gui.dll"
-                Source="build_win64\Qt5Gui.dll"/>
+                Name="Qt6Gui.dll"
+                Source="build_win64\Qt6Gui.dll"/>
             <File
                 Id="QtNetwork"
-                Name="Qt5Network.dll"
-                Source="build_win64\Qt5Network.dll"/>
+                Name="Qt6Network.dll"
+                Source="build_win64\Qt6Network.dll"/>
             <File
                 Id="QtWidgets"
-                Name="Qt5Widgets.dll"
-                Source="build_win64\Qt5Widgets.dll"/>
+                Name="Qt6Widgets.dll"
+                Source="build_win64\Qt6Widgets.dll"/>
             <File
                 Id="QtXml"
-                Name="Qt5Xml.dll"
-                Source="build_win64\Qt5Xml.dll"/>
+                Name="Qt6Xml.dll"
+                Source="build_win64\Qt6Xml.dll"/>
             <File
                 Id="QtSvg"
-                Name="Qt5Svg.dll"
-                Source="build_win64\Qt5Svg.dll"/>
+                Name="Qt6Svg.dll"
+                Source="build_win64\Qt6Svg.dll"/>
           </Component>
 
           <Component Win64="yes"
@@ -165,12 +165,12 @@
             <File
                 Id="libssl"
                 Name="libssl-1_1-x64.dll"
-                Source="C:\OpenSSL-v111-Win64\bin\libssl-1_1-x64.dll"
+                Source="C:\openssl-3.0\x64\bin\libssl-3-x64.dll"
                 KeyPath="yes"/>
             <File
                 Id="libcrypto"
                 Name="libcrypto-1_1-x64.dll"
-                Source="c:\OpenSSL-v111-Win64\bin\libcrypto-1_1-x64.dll"/>
+                Source="c:\openssl-3.0\x64\bin\libcrypto-3-x64.dll"/>
           </Component>
 
           <Component Win64="yes"
@@ -235,27 +235,27 @@
 
 	  <Directory Id="Platforms" Name="platforms">
             <Component Win64="yes"
-                Id="Qt5PlatformPlugins"
+                Id="Qt6PlatformPlugins"
                 Guid="1FFB773E-6D6D-4C0E-832B-F0FFEA959CA5">
 	      <File
                   Id="qminimal"
                   Name="qminimal.dll"
-                  Source="build_win64\qminimal.dll"/>
+                  Source="build_win64\plugins\platforms\qminimal.dll"/>
 	      <File
                   Id="qwindows"
                   Name="qwindows.dll"
-                  Source="build_win64\qwindows.dll"/>
+                  Source="build_win64\plugins\platforms\qwindows.dll"/>
             </Component>
 	  </Directory>
 
 	  <Directory Id="Styles" Name="styles">
             <Component Win64="yes"
-                Id="Qt5StylePlugins"
+                Id="Qt6StylePlugins"
                 Guid="7A676FC1-B139-432C-A7D3-F33984934B79">
 	      <File
-                  Id="qwindowsvistastyle"
-                  Name="qwindowsvistastyle.dll"
-                  Source="build_win64\qwindowsvistastyle.dll"/>
+                  Id="qmodernwindowsstyle"
+                  Name="qmodernwindowsstyle.dll"
+                  Source="build_win64\plugins\styles\qmodernwindowsstyle.dll"/>
             </Component>
 	  </Directory>
 
@@ -293,6 +293,7 @@
                   Name="vcruntime140_1.dll"
                   Source="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\@REDIST_VER@\x64\Microsoft.VC142.CRT\vcruntime140_1.DLL"/>
 	    </Component>
+    <!--
             <Component Win64="yes"
                 Id="Piper32"
                 Guid="F27A00A8-DD03-45B0-A13C-8CD8CC6F7386">
@@ -313,6 +314,7 @@
                   Name="libwinpthread-1.dll"
                   Source="build_win32\libwinpthread-1.dll"/>
 	    </Component>
+    -->
             <Component Win64="yes"
                 Id="Checker64"
                 Guid="19A400D9-D5B2-4CB5-AF84-7C1DEA11D7B5">
@@ -321,6 +323,7 @@
 		  Name="vamp-plugin-load-checker.exe"
 		  Source="build_win64\vamp-plugin-load-checker.exe"/>
 	    </Component>
+    <!--
             <Component Win64="yes"
                 Id="Checker32"
                 Guid="4F3FDFEC-23BD-4F2F-9B8F-9C8387FDEC21">
@@ -329,7 +332,7 @@
 		  Name="vamp-plugin-load-checker-32.exe"
 		  Source="build_win32\vamp-plugin-load-checker.exe"/>
 	    </Component>
-	    
+    -->	    
 	  </Directory> <!-- helpers -->
 	</Directory> <!-- sv -->
       </Directory> <!-- pfiles64 -->
@@ -375,14 +378,14 @@
       <ComponentRef Id="OpenSSL"/>
       <ComponentRef Id="OSWin10"/>
       <ComponentRef Id="OSOther"/>
-      <ComponentRef Id="Qt5"/>
+      <ComponentRef Id="Qt6"/>
       <ComponentRef Id="VCRuntime"/>
-      <ComponentRef Id="Qt5PlatformPlugins"/>
-      <ComponentRef Id="Qt5StylePlugins"/>
+      <ComponentRef Id="Qt6PlatformPlugins"/>
+      <ComponentRef Id="Qt6StylePlugins"/>
       <ComponentRef Id="Piper64"/>
-      <ComponentRef Id="Piper32"/>
+<!--      <ComponentRef Id="Piper32"/> -->
       <ComponentRef Id="Checker64"/>
-      <ComponentRef Id="Checker32"/>
+<!--      <ComponentRef Id="Checker32"/> -->
       <ComponentRef Id="Vamp32Plugins"/>
       <ComponentRef Id="ProgramMenuDir"/>
     </Feature>
@@ -401,7 +404,7 @@
     <Icon Id="winicon.ico" SourceFile="icons\sv-winicon.ico"/>
     <Property Id="ARPPRODUCTICON" Value="winicon.ico" />
 
-    <WixVariable Id="WixUIBannerBmp" Value="deploy\win32\top.bmp"/>
-    <WixVariable Id="WixUIDialogBmp" Value="deploy\win32\main.bmp"/>
+    <WixVariable Id="WixUIBannerBmp" Value="deploy\win64\top.bmp"/>
+    <WixVariable Id="WixUIDialogBmp" Value="deploy\win64\main.bmp"/>
 
   </Product> </Wix>
