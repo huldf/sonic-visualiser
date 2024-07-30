@@ -675,35 +675,35 @@ Label:	%4</source>
     </message>
     <message>
         <source>Each row specifies:</source>
-        <translation type="obsolete"><![CDATA[Каждая строка определяет:</translation>
+        <translation type="obsolete">Каждая строка определяет:</translation>
     </message>
     <message>
         <source>A point in time</source>
-        <translation type="obsolete"><![CDATA[Точку во времени</translation>
+        <translation type="obsolete">Точку во времени</translation>
     </message>
     <message>
         <source>A value at a time</source>
-        <translation type="obsolete"><![CDATA[Значение во точке времени</translation>
+        <translation type="obsolete">Значение во точке времени</translation>
     </message>
     <message>
         <source>A set of values</source>
-        <translation type="obsolete"><![CDATA[Серию значений</translation>
+        <translation type="obsolete">Серию значений</translation>
     </message>
     <message>
         <source>The first column contains:</source>
-        <translation type="obsolete"><![CDATA[Первый столбец содержит:</translation>
+        <translation type="obsolete">Первый столбец содержит:</translation>
     </message>
     <message>
         <source>Time, in seconds</source>
-        <translation type="obsolete"><![CDATA[Время, в секундах</translation>
+        <translation type="obsolete">Время, в секундах</translation>
     </message>
     <message>
         <source>Time, in audio sample frames</source>
-        <translation type="obsolete"><![CDATA[Время, в выборках звуковых сэмплов</translation>
+        <translation type="obsolete">Время, в выборках звуковых сэмплов</translation>
     </message>
     <message>
         <source>Data (rows are consecutive in time)</source>
-        <translation type="obsolete"><![CDATA[Данные (строки последовательны во времени)</translation>
+        <translation type="obsolete">Данные (строки последовательны во времени)</translation>
     </message>
     <message>
         <location filename="../svgui/widgets/CSVFormatDialog.cpp" line="96"/>
@@ -819,12 +819,12 @@ Label:	%4</source>
     <message>
         <source>
 Example data from file:</source>
-        <translation type="obsolete"><![CDATA[
+        <translation type="obsolete">
 Пример данных из файла:</translation>
     </message>
     <message>
         <source>&lt;b&gt;Select Data Format&lt;/b&gt;&lt;p&gt;Please select the correct data format for this file.</source>
-        <translation type="obsolete"><![CDATA[&lt;b&gt;Выберите формат данных&lt;/b&gt;&lt;p&gt;Выберите правильный формат данных для этого файла.</translation>
+        <translation type="obsolete">&lt;b&gt;Выберите формат данных&lt;/b&gt;&lt;p&gt;Выберите правильный формат данных для этого файла.</translation>
     </message>
 </context>
 <context>
@@ -1001,7 +1001,7 @@ Value:	%4</source>
     </message>
     <message>
         <source>Green</source>
-        <translation type="obsolete"><![CDATA[Зелёный</translation>
+        <translation type="obsolete">Зелёный</translation>
     </message>
     <message>
         <source>Sunset</source>
@@ -1536,7 +1536,7 @@ Label:	%4</source>
     </message>
     <message>
         <source>Frame</source>
-        <translation type="obsolete"><![CDATA[Выборка</translation>
+        <translation type="obsolete">Выборка</translation>
     </message>
     <message>
         <source>Pitch</source>
@@ -2321,7 +2321,7 @@ Do you want to locate it?</source>
     <name>LabFileWriter</name>
     <message>
         <source>Failed to open file %1 for writing</source>
-        <translation type="obsolete"><![CDATA[Не удалось открыть файл %1 для записи</translation>
+        <translation type="obsolete">Не удалось открыть файл %1 для записи</translation>
     </message>
 </context>
 <context>
@@ -2529,14 +2529,14 @@ Do you want to locate it?</source>
     <name>Layer::AddMeasurementRectCommand</name>
     <message>
         <source>Make Measurement</source>
-        <translation type="obsolete"><![CDATA[Создать замер</translation>
+        <translation type="obsolete">Создать замер</translation>
     </message>
 </context>
 <context>
     <name>Layer::DeleteMeasurementRectCommand</name>
     <message>
         <source>Delete Measurement</source>
-        <translation type="obsolete"><![CDATA[Удалить замер</translation>
+        <translation type="obsolete">Удалить замер</translation>
     </message>
 </context>
 <context>
@@ -2759,7 +2759,7 @@ Do you want to locate it?</source>
     <name>MainWindow</name>
     <message>
         <source>Sonic Visualiser</source>
-        <translation type="obsolete"><![CDATA[Sonic Visualiser</translation>
+        <translation type="obsolete">Sonic Visualiser</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="420"/>
@@ -2790,7 +2790,7 @@ Do you want to locate it?</source>
     </message>
     <message>
         <source>&amp;Open Session...</source>
-        <translation type="obsolete"><![CDATA[&amp;Открыть сеанс...</translation>
+        <translation type="obsolete">&amp;Открыть сеанс...</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="513"/>
@@ -2799,7 +2799,7 @@ Do you want to locate it?</source>
     </message>
     <message>
         <source>Open a previously saved Sonic Visualiser session file</source>
-        <translation type="obsolete"><![CDATA[Открыть файл сохранённого ранее сеанса Sonic Visualiser</translation>
+        <translation type="obsolete">Открыть файл сохранённого ранее сеанса Sonic Visualiser</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="512"/>
@@ -2823,7 +2823,7 @@ Do you want to locate it?</source>
     </message>
     <message>
         <source>Save the current session into a Sonic Visualiser session file</source>
-        <translation type="obsolete"><![CDATA[Сохранить в файл текущий сеанс Sonic Visualiser</translation>
+        <translation type="obsolete">Сохранить в файл текущий сеанс Sonic Visualiser</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="562"/>
@@ -2832,11 +2832,11 @@ Do you want to locate it?</source>
     </message>
     <message>
         <source>Save the current session into a new Sonic Visualiser session file</source>
-        <translation type="obsolete"><![CDATA[Сохранить текущий сеанс Sonic Visualiser в файл с другим именем</translation>
+        <translation type="obsolete">Сохранить текущий сеанс Sonic Visualiser в файл с другим именем</translation>
     </message>
     <message>
         <source>&amp;Import Audio File...</source>
-        <translation type="obsolete"><![CDATA[&amp;Импортировать звуковой файл...</translation>
+        <translation type="obsolete">&amp;Импортировать звуковой файл...</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="523"/>
@@ -2845,19 +2845,19 @@ Do you want to locate it?</source>
     </message>
     <message>
         <source>Import an existing audio file</source>
-        <translation type="obsolete"><![CDATA[Импортировать существующий звуковой файл</translation>
+        <translation type="obsolete">Импортировать существующий звуковой файл</translation>
     </message>
     <message>
         <source>Import Secondary Audio File...</source>
-        <translation type="obsolete"><![CDATA[Импортировать второй звуковой файл...</translation>
+        <translation type="obsolete">Импортировать второй звуковой файл...</translation>
     </message>
     <message>
         <source>Ctrl+Shift+I</source>
-        <translation type="obsolete"><![CDATA[Ctrl+Shift+I</translation>
+        <translation type="obsolete">Ctrl+Shift+I</translation>
     </message>
     <message>
         <source>Import an extra audio file as a separate layer</source>
-        <translation type="obsolete"><![CDATA[Импортировать ещё один звуковой файл в отдельный слой</translation>
+        <translation type="obsolete">Импортировать ещё один звуковой файл в отдельный слой</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="577"/>
@@ -3493,23 +3493,23 @@ Do you want to locate it?</source>
     </message>
     <message>
         <source>Open the Sonic Visualiser reference manual</source>
-        <translation type="obsolete"><![CDATA[Открыть справку по Sonic Visualiser</translation>
+        <translation type="obsolete">Открыть справку по Sonic Visualiser</translation>
     </message>
     <message>
         <source>Sonic Visualiser on the &amp;Web</source>
-        <translation type="obsolete"><![CDATA[&amp;Веб-сайт Sonic Visualiser</translation>
+        <translation type="obsolete">&amp;Веб-сайт Sonic Visualiser</translation>
     </message>
     <message>
         <source>Open the Sonic Visualiser website</source>
-        <translation type="obsolete"><![CDATA[Открыть веб-сайт Sonic Visualiser</translation>
+        <translation type="obsolete">Открыть веб-сайт Sonic Visualiser</translation>
     </message>
     <message>
         <source>&amp;About Sonic Visualiser</source>
-        <translation type="obsolete"><![CDATA[&amp;О Sonic Visualiser</translation>
+        <translation type="obsolete">&amp;О Sonic Visualiser</translation>
     </message>
     <message>
         <source>Show information about Sonic Visualiser</source>
-        <translation type="obsolete"><![CDATA[Показать информацию о Sonic Visualiser</translation>
+        <translation type="obsolete">Показать информацию о Sonic Visualiser</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="2255"/>
@@ -3733,7 +3733,7 @@ Do you want to locate it?</source>
     </message>
     <message>
         <source>Export the selected regions into a single audio file</source>
-        <translation type="obsolete"><![CDATA[Экспортировать выделенные области в один звуковой файл</translation>
+        <translation type="obsolete">Экспортировать выделенные области в один звуковой файл</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="2924"/>
@@ -3764,7 +3764,7 @@ What do you want to export?</source>
     </message>
     <message>
         <source>Sonic Visualiser: %1</source>
-        <translation type="obsolete"><![CDATA[Sonic Visualiser: %1</translation>
+        <translation type="obsolete">Sonic Visualiser: %1</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="3919"/>
@@ -3864,7 +3864,7 @@ What do you want to export?</source>
     </message>
     <message>
         <source>&amp;Recent Files</source>
-        <translation type="obsolete"><![CDATA[Н&amp;едавние файлы</translation>
+        <translation type="obsolete">Н&amp;едавние файлы</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="661"/>
@@ -3995,7 +3995,7 @@ What do you want to export?</source>
     </message>
     <message>
         <source>Abandon the current Sonic Visualiser session and start a new one</source>
-        <translation type="obsolete"><![CDATA[Отказаться от текущего сеанса Sonic Visualiser и начать новый</translation>
+        <translation type="obsolete">Отказаться от текущего сеанса Sonic Visualiser и начать новый</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="536"/>
@@ -4014,7 +4014,7 @@ What do you want to export?</source>
     </message>
     <message>
         <source>Exit Sonic Visualiser</source>
-        <translation type="obsolete"><![CDATA[Завершить работу с Sonic Visualiser</translation>
+        <translation type="obsolete">Завершить работу с Sonic Visualiser</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="695"/>
@@ -4093,7 +4093,7 @@ What do you want to export?</source>
     </message>
     <message>
         <source>Hide centre indicator, frame times, layer names and scale</source>
-        <translation type="obsolete"><![CDATA[Спрятать индикацию центра, времён выделения, имена слоёв и масштаб</translation>
+        <translation type="obsolete">Спрятать индикацию центра, времён выделения, имена слоёв и масштаб</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="1061"/>
@@ -4102,15 +4102,15 @@ What do you want to export?</source>
     </message>
     <message>
         <source>Show centre indicator only</source>
-        <translation type="obsolete"><![CDATA[Показывать только индикатор центра</translation>
+        <translation type="obsolete">Показывать только индикатор центра</translation>
     </message>
     <message>
         <source>Show &amp;Standard Overlays</source>
-        <translation type="obsolete"><![CDATA[Показывать о&amp;бычные перекрытия</translation>
+        <translation type="obsolete">Показывать о&amp;бычные перекрытия</translation>
     </message>
     <message>
         <source>Show centre indicator, frame times and scale</source>
-        <translation type="obsolete"><![CDATA[Показывать индикатор центра, времена выделений, имена слоёв и масштаб</translation>
+        <translation type="obsolete">Показывать индикатор центра, времена выделений, имена слоёв и масштаб</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="1071"/>
@@ -4119,11 +4119,11 @@ What do you want to export?</source>
     </message>
     <message>
         <source>7</source>
-        <translation type="obsolete"><![CDATA[7</translation>
+        <translation type="obsolete">7</translation>
     </message>
     <message>
         <source>Show all texts and scale</source>
-        <translation type="obsolete"><![CDATA[Показывать весь текст и масштаб</translation>
+        <translation type="obsolete">Показывать весь текст и масштаб</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="1101"/>
@@ -4719,7 +4719,7 @@ What do you want to export?</source>
     </message>
     <message>
         <source>Open a window showing the keystrokes you can use in Sonic Visualiser</source>
-        <translation type="obsolete"><![CDATA[Открыть окно, в котором перечисляются клавиатурные комбинации Sonic Visualiser</translation>
+        <translation type="obsolete">Открыть окно, в котором перечисляются клавиатурные комбинации Sonic Visualiser</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="2051"/>
@@ -5393,7 +5393,7 @@ What do you want to export?</source>
     </message>
     <message>
         <source>%1: %1</source>
-        <translation type="obsolete"><![CDATA[%1: %1 {1:?}</translation>
+        <translation type="obsolete">%1: %1 {1:?}</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="4592"/>
@@ -5488,7 +5488,7 @@ the current playback rate (%2 Hz).&lt;p&gt;The file will play at the wrong speed
     </message>
     <message>
         <source>&lt;p&gt;&lt;small&gt;%1 : %2 configuration&lt;/small&gt;&lt;/p&gt;</source>
-        <translation type="obsolete"><![CDATA[&lt;p&gt;&lt;small&gt;%1 : конфигурация %2&lt;/small&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;small&gt;%1 : конфигурация %2&lt;/small&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>With Qt v%1 &amp;copy; Nokia Corporation</source>
@@ -5530,19 +5530,19 @@ the current playback rate (%2 Hz).&lt;p&gt;The file will play at the wrong speed
     </message>
     <message>
         <source>&lt;br&gt;With Raptor RDF parser v%1 &amp;copy; Dave Beckett and the University of Bristol</source>
-        <translation type="obsolete"><![CDATA[&lt;br&gt;С парсером RDF Raptor v%1 &amp;copy; Dave Beckett и Бристольский университет</translation>
+        <translation type="obsolete">&lt;br&gt;С парсером RDF Raptor v%1 &amp;copy; Dave Beckett и Бристольский университет</translation>
     </message>
     <message>
         <source>&lt;br&gt;With Raptor RDF parser &amp;copy; Dave Beckett and the University of Bristol</source>
-        <translation type="obsolete"><![CDATA[&lt;br&gt;С парсером RDF Raptor &amp;copy; Dave Beckett и Бристольский университет</translation>
+        <translation type="obsolete">&lt;br&gt;С парсером RDF Raptor &amp;copy; Dave Beckett и Бристольский университет</translation>
     </message>
     <message>
         <source>&lt;br&gt;With Rasqal RDF query engine v%1 &amp;copy; Dave Beckett and the University of Bristol</source>
-        <translation type="obsolete"><![CDATA[&lt;br&gt;С движком запросов RDF  Rasqal v%1 &amp;copy; Dave Beckett и Бристольский университет</translation>
+        <translation type="obsolete">&lt;br&gt;С движком запросов RDF  Rasqal v%1 &amp;copy; Dave Beckett и Бристольский университет</translation>
     </message>
     <message>
         <source>&lt;br&gt;With Rasqal RDF query engine &amp;copy; Dave Beckett and the University of Bristol</source>
-        <translation type="obsolete"><![CDATA[&lt;br&gt;С движком запросов RDF  Rasqal &amp;copy; Dave Beckett и Бристольский университет</translation>
+        <translation type="obsolete">&lt;br&gt;С движком запросов RDF  Rasqal &amp;copy; Dave Beckett и Бристольский университет</translation>
     </message>
     <message>
         <location filename="../main/MainWindow.cpp" line="5505"/>
@@ -5866,11 +5866,11 @@ the current playback rate (%2 Hz).&lt;p&gt;The file will play at the wrong speed
     </message>
     <message>
         <source>Replace the existing main waveform</source>
-        <translation type="obsolete"><![CDATA[Заменить существующую основную волновую форму</translation>
+        <translation type="obsolete">Заменить существующую основную волновую форму</translation>
     </message>
     <message>
         <source>Load this file into a new waveform pane</source>
-        <translation type="obsolete"><![CDATA[Загрузить этот файл в новое окно волновой формы</translation>
+        <translation type="obsolete">Загрузить этот файл в новое окно волновой формы</translation>
     </message>
     <message>
         <location filename="../svapp/framework/MainWindowBase.cpp" line="1546"/>
@@ -6128,7 +6128,7 @@ If you save this session, it will be saved without any reference to that audio, 
     </message>
     <message>
         <source>&lt;b&gt;Select a target for import&lt;/b&gt;&lt;p&gt;You already have an audio waveform loaded.&lt;br&gt;What would you like to do with the new audio file?</source>
-        <translation type="obsolete"><![CDATA[&lt;b&gt;Выберите цель импорта&lt;/b&gt;&lt;p&gt;У вас уже есть один загруженный звуковой файл.&lt;br&gt;Что вы хотите сделать с новыми звуковыми данными?</translation>
+        <translation type="obsolete">&lt;b&gt;Выберите цель импорта&lt;/b&gt;&lt;p&gt;У вас уже есть один загруженный звуковой файл.&lt;br&gt;Что вы хотите сделать с новыми звуковыми данными?</translation>
     </message>
     <message>
         <location filename="../svapp/framework/MainWindowBase.cpp" line="1741"/>
@@ -6176,14 +6176,14 @@ If you save this session, it will be saved without any reference to that audio, 
     <name>MainWindowBase::AddPaneCommand</name>
     <message>
         <source>Add Pane</source>
-        <translation type="obsolete"><![CDATA[Добавить окно</translation>
+        <translation type="obsolete">Добавить окно</translation>
     </message>
 </context>
 <context>
     <name>MainWindowBase::RemovePaneCommand</name>
     <message>
         <source>Remove Pane</source>
-        <translation type="obsolete"><![CDATA[Удалить окно</translation>
+        <translation type="obsolete">Удалить окно</translation>
     </message>
 </context>
 <context>
@@ -7016,38 +7016,38 @@ Label:	%4</source>
     </message>
     <message>
         <source>Change Playback Plugin</source>
-        <translation type="obsolete"><![CDATA[Смена расширения воспроизведения</translation>
+        <translation type="obsolete">Смена расширения воспроизведения</translation>
     </message>
     <message>
         <source>Configure Playback Plugin</source>
-        <translation type="obsolete"><![CDATA[Смена параметров расширения воспроизведения</translation>
+        <translation type="obsolete">Смена параметров расширения воспроизведения</translation>
     </message>
 </context>
 <context>
     <name>PlayParameterRepository::EditCommand</name>
     <message>
         <source>Adjust Playback Parameters</source>
-        <translation type="obsolete"><![CDATA[Коррекция параметров воспроизведения</translation>
+        <translation type="obsolete">Коррекция параметров воспроизведения</translation>
     </message>
     <message>
         <source>Change Playback Mute State</source>
-        <translation type="obsolete"><![CDATA[Смена состояния приглушенности воспроизведения</translation>
+        <translation type="obsolete">Смена состояния приглушенности воспроизведения</translation>
     </message>
     <message>
         <source>Change Playback Gain</source>
-        <translation type="obsolete"><![CDATA[Смена громкости воспроизведения</translation>
+        <translation type="obsolete">Смена громкости воспроизведения</translation>
     </message>
     <message>
         <source>Change Playback Pan</source>
-        <translation type="obsolete"><![CDATA[Смена панорамы при воспроизведении</translation>
+        <translation type="obsolete">Смена панорамы при воспроизведении</translation>
     </message>
     <message>
         <source>Change Playback Plugin</source>
-        <translation type="obsolete"><![CDATA[Смена расширения воспроизведения</translation>
+        <translation type="obsolete">Смена расширения воспроизведения</translation>
     </message>
     <message>
         <source>Configure Playback Plugin</source>
-        <translation type="obsolete"><![CDATA[Смена параметров расширения воспроизведения</translation>
+        <translation type="obsolete">Смена параметров расширения воспроизведения</translation>
     </message>
 </context>
 <context>
@@ -8025,7 +8025,7 @@ Apply them before closing?</source>
     <name>PropertyContainer::SetPropertyCommand</name>
     <message>
         <source>Set %1 Property</source>
-        <translation type="obsolete"><![CDATA[Установить свойство %1</translation>
+        <translation type="obsolete">Установить свойство %1</translation>
     </message>
 </context>
 <context>
@@ -8840,40 +8840,40 @@ Range:	%3 samples (%4)</source>
     <name>SparseModel</name>
     <message>
         <source>Add Point</source>
-        <translation type="obsolete"><![CDATA[Добавить точку</translation>
+        <translation type="obsolete">Добавить точку</translation>
     </message>
     <message>
         <source>Delete Point</source>
-        <translation type="obsolete"><![CDATA[Удалить точку</translation>
+        <translation type="obsolete">Удалить точку</translation>
     </message>
     <message>
         <source>Re-Label Point</source>
-        <translation type="obsolete"><![CDATA[Переразметить точку</translation>
+        <translation type="obsolete">Переразметить точку</translation>
     </message>
     <message>
         <source>Edit Data</source>
-        <translation type="obsolete"><![CDATA[Изменить данные</translation>
+        <translation type="obsolete">Изменить данные</translation>
     </message>
 </context>
 <context>
     <name>SparseModel::AddPointCommand</name>
     <message>
         <source>Add Point</source>
-        <translation type="obsolete"><![CDATA[Добавить точку</translation>
+        <translation type="obsolete">Добавить точку</translation>
     </message>
 </context>
 <context>
     <name>SparseModel::DeletePointCommand</name>
     <message>
         <source>Delete Point</source>
-        <translation type="obsolete"><![CDATA[Удалить точку</translation>
+        <translation type="obsolete">Удалить точку</translation>
     </message>
 </context>
 <context>
     <name>SparseModel::RelabelCommand</name>
     <message>
         <source>Re-Label Point</source>
-        <translation type="obsolete"><![CDATA[Переразметить точку</translation>
+        <translation type="obsolete">Переразметить точку</translation>
     </message>
 </context>
 <context>
@@ -9538,7 +9538,7 @@ dB:	%5</source>
     </message>
     <message>
         <source>Plot Type</source>
-        <translation type="obsolete"><![CDATA[Тип графика</translation>
+        <translation type="obsolete">Тип графика</translation>
     </message>
 </context>
 <context>
@@ -10754,15 +10754,15 @@ Label:	%4</source>
     <name>ViewManager::SetSelectionCommand</name>
     <message>
         <source>Clear Selection</source>
-        <translation type="obsolete"><![CDATA[Снять выделение</translation>
+        <translation type="obsolete">Снять выделение</translation>
     </message>
     <message>
         <source>Select Multiple Regions</source>
-        <translation type="obsolete"><![CDATA[Выделить несколько областей</translation>
+        <translation type="obsolete">Выделить несколько областей</translation>
     </message>
     <message>
         <source>Select Region</source>
-        <translation type="obsolete"><![CDATA[Выделить область</translation>
+        <translation type="obsolete">Выделить область</translation>
     </message>
 </context>
 <context>
