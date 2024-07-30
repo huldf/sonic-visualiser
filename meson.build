@@ -329,6 +329,7 @@ elif system == 'darwin'
   ]
 
   server_additional_libs = [
+    '-L' + svdeps_libdir,
     '-lsord-0',
     '-lserd-0',
     '-lcapnp',
@@ -465,6 +466,9 @@ elif system == 'windows'
       # (We don't have MediaFoundation support with this build sadly)
       '-lwinmm',
       '-lws2_32',
+    ]
+    server_additional_libs += [
+      '-lzix'
     ]
   elif architecture == 'x86_64'
     feature_additional_libs += [
