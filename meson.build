@@ -80,8 +80,10 @@ elif buildtype.startswith('debug')
 endif # get_option('buildtype')
 
 svcore_moc_args = []
+feature_additional_libpaths = []
 feature_additional_libs = []
 feature_include_dirs = []
+server_additional_libs = []
 server_dependencies = []
 
 dl_dep = meson.get_compiler('c').find_library('dl', required: false)
