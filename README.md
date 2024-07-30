@@ -40,22 +40,27 @@ Credits
 If you are using Sonic Visualiser in research work for publication,
 please see the file CITATION for a reference to cite.
 
-Sonic Visualiser was devised and developed in the [Centre for Digital
-Music](https://c4dm.eecs.qmul.ac.uk/) at Queen Mary University of
-London, primarily by Chris Cannam, with contributions from Christian
-Landone, Mathieu Barthet, Dan Stowell, Jesús Corral García, Matthias
-Mauch, and Craig Sapp. Special thanks to Professor Mark Sandler for
-initiating and supporting the project.
+Sonic Visualiser was devised and developed up to release 4.2 in the
+[Centre for Digital Music](https://c4dm.eecs.qmul.ac.uk/) at Queen
+Mary University of London, primarily by Chris Cannam, with
+contributions from Christian Landone, Mathieu Barthet, Dan Stowell,
+Jesús Corral García, Matthias Mauch, and Craig Sapp. Special thanks to
+Professor Mark Sandler for initiating and supporting the project.
 
-Sonic Visualiser is currently lightly maintained by Chris Cannam at
-Particular Programs Ltd. There are no major features in development as
-of this release, only bug fixes. If you need something specific and
-have funding available for it, please contact us.
+The 4.3 to 4.5 releases were developed by Chris Cannam at Particular
+Programs Ltd.
 
-The Sonic Visualiser code is in general
+The 5.0 release was supported once again by the Centre for Digital
+Music at Queen Mary University of London.
+
+If you would like to sponsor future general development of Sonic
+Visualiser, or if you need something specific and have funding
+available for it, please contact [Particular Programs Ltd](https://particularprograms.co.uk/).
+
+The bulk of the Sonic Visualiser code is
 
  * Copyright (c) 2005-2007 Chris Cannam
- * Copyright (c) 2006-2020, 2024 Queen Mary University of London
+ * Copyright (c) 2006-2020 and 2024 Queen Mary University of London
  * Copyright (c) 2020-2023 Particular Programs Ltd
 
 with a few exceptions as indicated in the individual source files.

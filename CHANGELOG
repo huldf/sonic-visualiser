@@ -1,5 +1,5 @@
 
-Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:
+Changes in Sonic Visualiser v5.0 (31 July 2024) since the previous release 4.5.2:
 
  - Port to Qt6. The code now builds only with Qt6, and Qt5 is no
    longer supported
