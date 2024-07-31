@@ -12,8 +12,15 @@ if not exist "C:\Program Files (x86)\WiX Toolset v3.14\bin" (
 @   exit /b 2
 )
 
+set KITDIR=C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64
+
+if not exist "%KITDIR%" (
+@   echo Could not find Windows SDK binaries in %KITDIR%
+@   exit /b 2
+)
+
 set ORIGINALPATH=%PATH%
-set PATH=C:\Program Files (x86)\Windows Kits\10\bin\x64;%PATH%
+set PATH=%KITDIR%;%PATH%
 set NAME=Christopher Cannam
 
 set ARG=%1
@@ -40,9 +47,14 @@ del /q /s build_win64
 call .\deploy\win64\build-64.bat
 if %errorlevel% neq 0 exit /b %errorlevel%
 
+cd %STARTPWD%
+del /q /s build_win32
+call .\deploy\win64\build-32-helpers.bat
+if %errorlevel% neq 0 exit /b %errorlevel%
+
 if "%ARG%" == "sign" (
 @echo Signing executables and libraries
-signtool sign /v /n "%NAME%" /t http://time.certum.pl /fd sha1 /a build_win64\*.exe build_win64\*.dll
+signtool sign /v /n "%NAME%" /t http://time.certum.pl /fd sha1 /a build_win64\*.exe build_win64\*.dll build_win32\*.exe
 )
 
 powershell -NoProfile -ExecutionPolicy Bypass -Command "& 'deploy\win64\generate-wxs.ps1'"
