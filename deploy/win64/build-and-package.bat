@@ -14,7 +14,7 @@ if not exist "C:\Program Files (x86)\WiX Toolset v3.14\bin" (
 
 set KITDIR="C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64"
 
-if not exist "%KITDIR%" (
+if not exist %KITDIR% (
 @   echo Could not find Windows SDK binaries in %KITDIR%
 @   exit /b 2
 )
