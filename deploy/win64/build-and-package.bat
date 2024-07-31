@@ -12,15 +12,14 @@ if not exist "C:\Program Files (x86)\WiX Toolset v3.14\bin" (
 @   exit /b 2
 )
 
-set KITDIR="C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64"
-
-if not exist %KITDIR% (
-@   echo Could not find Windows SDK binaries in %KITDIR%
+if not exist "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64" (
+@   echo Could not find Windows SDK binaries
 @   exit /b 2
 )
 
 set ORIGINALPATH=%PATH%
-set PATH=%KITDIR%;%PATH%
+set PATH=C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64;%PATH%
+
 set NAME=Christopher Cannam
 
 set ARG=%1
