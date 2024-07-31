@@ -164,12 +164,12 @@
                      Guid="d015dbb1-df5f-49da-a30a-1c46f3e58915">
             <File
                 Id="libssl"
-                Name="libssl-1_1-x64.dll"
+                Name="libssl-3-x64.dll"
                 Source="C:\openssl-3.0\x64\bin\libssl-3-x64.dll"
                 KeyPath="yes"/>
             <File
                 Id="libcrypto"
-                Name="libcrypto-1_1-x64.dll"
+                Name="libcrypto-3-x64.dll"
                 Source="c:\openssl-3.0\x64\bin\libcrypto-3-x64.dll"/>
           </Component>
 
@@ -256,6 +256,17 @@
                   Id="qmodernwindowsstyle"
                   Name="qmodernwindowsstyle.dll"
                   Source="build_win64\plugins\styles\qmodernwindowsstyle.dll"/>
+            </Component>
+	  </Directory>
+
+	  <Directory Id="TLS" Name="tls">
+            <Component Win64="yes"
+                Id="Qt6TLSPlugins"
+                Guid="189407ff-9f1c-4b5a-ab42-678446418c9d">
+	      <File
+                  Id="qopensslbackend"
+                  Name="qopensslbackend.dll"
+                  Source="build_win64\plugins\tls\qopensslbackend.dll"/>
             </Component>
 	  </Directory>
 
@@ -366,6 +377,7 @@
       <ComponentRef Id="VCRuntime"/>
       <ComponentRef Id="Qt6PlatformPlugins"/>
       <ComponentRef Id="Qt6StylePlugins"/>
+      <ComponentRef Id="Qt6TLSPlugins"/>
       <ComponentRef Id="Piper64"/>
       <ComponentRef Id="Piper32"/>
       <ComponentRef Id="Checker64"/>
