@@ -88,8 +88,8 @@ PreferencesDialog::PreferencesDialog(QWidget *parent) :
                               ("Window Type", &min, &max, &deflt));
     m_windowTypeSelector = new WindowTypeSelector(m_windowType);
 
-    connect(m_windowTypeSelector, SIGNAL(windowTypeChanged(WindowType)),
-            this, SLOT(windowTypeChanged(WindowType)));
+    connect(m_windowTypeSelector, &WindowTypeSelector::windowTypeChanged,
+            this, &PreferencesDialog::windowTypeChanged);
 
     QCheckBox *vampProcessSeparation = new QCheckBox;
     m_runPluginsInProcess = prefs->getRunPluginsInProcess();
@@ -100,12 +100,12 @@ PreferencesDialog::PreferencesDialog(QWidget *parent) :
     
     QComboBox *smoothing = new QComboBox;
     
-    int sm = prefs->getPropertyRangeAndValue("Spectrogram Y Smoothing", &min, &max,
+    int sm = prefs->getPropertyRangeAndValue("Spectrogram Smoothing", &min, &max,
                                              &deflt);
     m_spectrogramSmoothing = sm;
 
     for (i = min; i <= max; ++i) {
-        smoothing->addItem(prefs->getPropertyValueLabel("Spectrogram Y Smoothing", i));
+        smoothing->addItem(prefs->getPropertyValueLabel("Spectrogram Smoothing", i));
     }
 
     smoothing->setCurrentIndex(sm);
@@ -469,7 +469,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent) :
     subgrid->addWidget(octaveSystem, row++, 1, 1, 2);
 
     subgrid->addWidget(new QLabel(prefs->getPropertyLabel
-                                  ("Spectrogram Y Smoothing")),
+                                  ("Spectrogram Smoothing")),
                        row, 0);
     subgrid->addWidget(smoothing, row++, 1, 1, 2);
 
