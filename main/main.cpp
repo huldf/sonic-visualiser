@@ -350,7 +350,8 @@ main(int argc, char **argv)
     settings.beginGroup("Preferences");
     if (!(settings.value("always-use-default-font", false).toBool())) {
 #ifdef Q_OS_WIN32
-        if (!language.startsWith("ru_")) { // + any future non-Latin i18ns
+        if (locale.uiLanguages().empty() ||
+            !locale.uiLanguages()[0].startsWith("ru_")) { // + any future non-Latin i18ns
             QFont font(QApplication::font());
             QString preferredFamily = "Segoe UI";
             font.setFamily(preferredFamily);
