@@ -333,12 +333,18 @@ main(int argc, char **argv)
 
     QSettings settings;
 
-    QString language = QLocale::system().name();
-    SVDEBUG << "System language is: " << language << endl;
-
+    QLocale locale;
+    SVDEBUG << "System locale lists the following UI languages: "
+            << locale.uiLanguages().join("; ") << endl;
+    
     settings.beginGroup("Preferences");
-    QString prefLanguage = settings.value("locale", language).toString();
-    if (prefLanguage != QString()) language = prefLanguage;
+    QString prefLanguage = settings.value("locale", "").toString();
+    if (prefLanguage != QString()) {
+        locale = QLocale(prefLanguage);
+        SVDEBUG << "Loaded language preference \"" << prefLanguage
+                << "\" from settings; locale now lists: "
+                << locale.uiLanguages().join("; ") << endl;
+    }
     settings.endGroup();
 
     settings.beginGroup("Preferences");
@@ -419,31 +425,26 @@ main(int argc, char **argv)
     }
 
     QTranslator qtTranslator;
-    QString qtTrName = QString("qt_%1").arg(language);
-    SVDEBUG << "Loading " << qtTrName << "... ";
-    bool success = false;
-    if (!(success = qtTranslator.load(qtTrName))) {
+    if (!qtTranslator.load(locale, "qtbase", "_", ":/i18n", ".qm")) {
         QString qtDir = getenv("QTDIR");
-        if (qtDir != "") {
-            success = qtTranslator.load
-                (qtTrName, QDir(qtDir).filePath("translations"));
-        }
-    }
-    if (!success) {
-        SVDEBUG << "Failed\nFailed to load Qt translation for locale" << endl;
+        if (qtDir == "" ||
+            !qtTranslator.load(locale, QDir(qtDir).filePath("translations"))) {
+            SVDEBUG << "Failed to load Qt translations for locale" << endl;
+        } else {
+            SVDEBUG << "Loaded Qt translations from QTDIR" << endl;
+            application.installTranslator(&qtTranslator);
+        }            
     } else {
-        SVDEBUG << "Done" << endl;
+        SVDEBUG << "Loaded Qt translations from bundle" << endl;
+        application.installTranslator(&qtTranslator);
     }
-    application.installTranslator(&qtTranslator);
 
     QTranslator svTranslator;
-    QString svTrName = QString("sonic-visualiser_%1").arg(language);
-    SVDEBUG << "Loading " << svTrName << "... ";
-    if (svTranslator.load(svTrName, ":i18n")) {
-        SVDEBUG << "Done" << endl;
-        application.installTranslator(&svTranslator);
+    if (!svTranslator.load(locale, "sonic-visualiser", "_", ":/i18n", ".qm")) {
+        SVDEBUG << "Failed to load SV translations for locale" << endl;
     } else {
-        SVDEBUG << "Unable to load" << endl;
+        SVDEBUG << "Loaded SV translations" << endl;
+        application.installTranslator(&svTranslator);
     }
 
     StoreStartupLocale();
