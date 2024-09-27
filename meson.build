@@ -79,6 +79,13 @@ elif buildtype.startswith('debug')
   ]
 endif # get_option('buildtype')
 
+if architecture == 'x86' and not with_qt
+  general_defines += [
+    # See note in vamp-plugin-sdk/src/vamp-hostsdk/Files.cpp
+    '-DDO_NOT_FREE_LIBRARIES=1'
+  ]
+endif
+
 svcore_moc_args = []
 feature_additional_libpaths = []
 feature_additional_libs = []
