@@ -16,7 +16,7 @@ if [ -d /Applications ]; then
 
     archs="x86_64 arm64"
     
-    qtdir_x86_64="/Users/cannam/Qt/6.6.1/macos"
+    qtdir_x86_64="/Users/cannam/Qt/6.7.2/macos"
 
     qtdir_arm64="$qtdir_x86_64"
 
